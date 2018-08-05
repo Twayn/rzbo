@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="./js/order.call.js"></script>
@@ -526,7 +526,7 @@
                     </div>
 
                     <div style="height: 303px; top: 69px; left: 490px; width: 460px; position: absolute;">
-                        <form>
+                        <form id = "order-call">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="input1" placeholder="Ваше имя" required minlength="4" maxlength="40">
                             </div>
@@ -543,20 +543,19 @@
                                 <textarea class="form-control" id="textarea1" placeholder="Тема, время для связи, другое" rows="3"></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-basic">Заказать звонок</button>
+                            <button id = "order-call-button" type="submit" class="btn btn-basic">Заказать звонок</button>
                         </form>
                     </div>
-                    <div style="top: 35px; left: 272px; width: 215px; position: absolute;" class="s2" id="WRchTxt0-sk3">
+                    <div style="top: 35px; left: 272px; width: 215px; position: absolute;" class="s2">
                         <p class="font_5"><strong>МЫ В СОЦСЕТЯХ</strong></p>
                     </div>
-                    <div style="top: 78px; left: 320px; width: 101px; position: absolute;" class="s2" id="WRchTxt1-8l3">
+                    <div style="top: 78px; left: 320px; width: 101px; position: absolute;" class="s2">
                         <p style="line-height: 1.4em;" class="font_5"><span class="color_2">ВКонтакте</span></p>
                     </div>
                     <!-- Эмблема VK -->
                     <div style="position: absolute; width: 46px; height: 31px; top: 69px; left: 270px;">
                         <a href="https://vk.com/company">
-                            <div style="width: 31px; height: 31px; position: absolute; top: 0; left: 0;"
-                                 id="comp-ii5sq3sr" class="style-ii5srjmv">
+                            <div style="width: 31px; height: 31px; position: absolute; top: 0; left: 0;">
                                 <img alt="" src="img/icons/vk.svg" style="width: 31px; height: 31px;">
                             </div>
                         </a>
