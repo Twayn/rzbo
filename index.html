@@ -3,11 +3,10 @@
     <meta charset="utf-8">
     <title>Реестр закупок</title>
     <link href="img/favicon.ico" rel="icon" type="image/x-icon"/>
-    <script type="text/javascript" src="./js/order.call.js"></script>
-    <script type="text/javascript" src="./js/start.work.js"></script>
+    <!--<script type="text/javascript" src="./js/order.call.js"></script>-->
+    <!--<script type="text/javascript" src="./js/start.work.js"></script>-->
     <link rel="stylesheet" href="css/viewer.css">
     <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="all" href="fancybox/jquery.fancybox.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -32,6 +31,60 @@
         </li>
     </ul>
 </nav>
+
+<div class="modal fade" id="orderProductModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Заполните форму и мы свяжемся в Вами</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <form id="contact" name="contact" action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="workplace">Количество рабочих мест</label>
+                        <select id="workplace" name="workplace" size="1">
+                            <option value="Демоверсия">Бесплатная демоверсия</option>
+                            <option value="До пяти">До пяти рабочих мест</option>
+                            <option value="Пять и более">Пять и более рабочих мест</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="forename">Ваше имя</label>
+                        <input type="text" class="form-control" id="forename" placeholder="Имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Название компании</label>
+                        <input type="text" class="form-control" id="company" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Ваш телефон</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea">Ваше сообщение</label>
+                        <textarea class="form-control" id="textarea" placeholder="Сообщение" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Отправить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;" data-dismiss="modal">Закрыть</button>
+                </form>
+            </div>
+
+            <!--<div class="modal-footer">-->
+                <!---->
+            <!--</div>-->
+
+        </div>
+    </div>
+</div>
 
 <div>
     <style type="text/css">
@@ -61,8 +114,7 @@
 
 <!-- Header -->
 <div class="SITE_ROOT" id="SITE_ROOT" style="width:980px;padding-bottom:41px;">
-    <div style="top: 0; width: 980px; height: 114px; position: absolute; left: 0;" class="s0" data-state=" "
-         id="SITE_HEADER">
+    <div style="top: 0; width: 980px; height: 114px; position: absolute; left: 0;" class="s0" data-state=" " id="SITE_HEADER">
 
         <!-- Лого -->
         <div style="top:12px;left:0;width:268px;height:36px;position:absolute;" title="АСГОР">
@@ -105,8 +157,8 @@
         </a>
     </div>
 
-    <div style="top: 114px; width: 980px; height: 1713px; position: absolute; left: 0;" class="s9" data-state=""
-         id="PAGES_CONTAINER">
+    <div style="top: 114px; width: 980px; height: 1713px; position: absolute; left: 0;" class="s9" data-state="" id="PAGES_CONTAINER">
+        <!-- белый разделитель свернху -->
         <div style="top: 91px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="s13"
              id="comp-ii01vtrq">
             <div id="comp-ii01vtrqline" class="s13line"></div>
@@ -504,11 +556,9 @@
                 <div id="comp-ii6wrm4m" data-align="center" data-disabled="false" data-margin="0"
                      style="top: 111px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;"
                      class="s33" data-state="desktop">
-                    <a class="modalbox" href="#inline">
-                        <button type="button" class="btn btn-success btn-large"
-                                style="height: 50px; width: 188px; font-size: 2.0em;">Начать работу!
-                        </button>
-                    </a>
+                    <button type="button" class="btn btn-success" id="start-work1" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                        Начать работу!
+                    </button>
                 </div>
                 <div style="top: 17px; left: 35px; width: 49px; height: 49px; position: absolute; visibility: inherit;"
                      id="comp-ii70koq9" class="style-ii70fedx2">
@@ -638,13 +688,9 @@
                 <div id="comp-ii6wrgmw" data-align="center" data-disabled="false" data-margin="0"
                      style="top: 110px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;"
                      class="s39" data-state="desktop">
-                    <div class="s39_left s39_shd"></div>
-                    <div class="s39_right s39_shd"></div>
-                    <a class="modalbox" href="#inline">
-                        <button type="button" class="btn btn-success btn-large"
-                                style="height: 50px; width: 188px; font-size: 2.0em;">Начать работу!
-                        </button>
-                    </a>
+                    <button type="button" class="btn btn-success" id="start-work0" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                        Начать работу!
+                    </button>
                 </div>
                 <div style="top: 59px; left: 256px; width: 56px; height: 56px; position: absolute; visibility: inherit;"
                      id="comp-ii5v7n2p" class="style-ii795fhq">
@@ -767,11 +813,9 @@
             <div id="comp-ii5vk1tainlineContent" class="s31inlineContent">
                 <div id="comp-ii5vf1z2"
                      style="top: 100px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
-                    <a class="modalbox" href="#inline">
-                        <button type="button" class="btn btn-danger btn-large"
-                                style="height: 50px; width: 188px; font-size: 2.0em;">Получить доступ!
-                        </button>
-                    </a>
+                    <button type="button" class="btn btn-danger" id="grant-access" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                        Получить доступ!
+                    </button>
                 </div>
                 <div style="top: 17px; left: 668px; width: 380px; position: absolute; visibility: inherit; text-align: center;"
                      class="s2" id="comp-ii5vdidz">
@@ -851,58 +895,6 @@
         </div>
         <div style="top: 1692px; left: 109px; width: 0; height: 21px; position: absolute;">
             <a name="Call"></a>
-        </div>
-
-        <div id="inline">
-            <h2>Пожалуйста, заполните форму и мы свяжемся в Вами</h2>
-            <form id="contact" name="contact" action="#" method="post">
-                <label for="workplace">Количество рабочих мест</label>
-                <select id="workplace" name="workplace" size="1">
-                    <option value="Демоверсия">Бесплатная демоверсия</option>
-                    <option value="До пяти">До пяти рабочих мест</option>
-                    <option value="Пять и более">Пять и более рабочих мест</option>
-                </select>
-                <br>
-                <br>
-                <label for="forename">Ваше имя&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input id="forename" name="forename" class="txt">
-                <br>
-                <label for="company">Название компании &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input id="company" name="company" class="txt">
-                <br>
-                <label for="email">Ваш E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="email" id="email" name="email" class="txt">
-                <br>
-                <label for="phone">Ваш телефон &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input id="phone" name="phone" class="txt">
-                <br>
-                <label for="msg">Ваше сообщение</label>
-                <textarea id="msg" name="msg" class="txtarea"></textarea>
-                <br style="display: none">
-                <label for="Name" style="display: none">Ваше сообщение</label>
-                <textarea id="Name" name="Name" class="txtarea" style="display: none"></textarea>
-                <table>
-                    <tr>
-                        <td>
-                            <button id="send">Отправить E-mail</button>
-                        </td>
-                        <td style="vertical-align: top">
-                            <div id="email_delivered" style="display: none">
-                                <h5>&nbsp;&nbsp;&nbsp;Сообщение отправлено</h5>
-                            </div>
-                            <div id="corr_name" style="display: none">
-                                <h5>&nbsp;&nbsp;&nbsp;Введите корректное имя</h5>
-                            </div>
-                            <div id="corr_email" style="display: none">
-                                <h5>&nbsp;&nbsp;&nbsp;Введите корректный E-mail</h5>
-                            </div>
-                            <div id="corr_phone" style="display: none">
-                                <h5>&nbsp;&nbsp;&nbsp;Введите корректный номер телефона</h5>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
         </div>
 
         <!-- Footer -->
@@ -1008,13 +1000,13 @@
 
 <!-- Смена поля select в списке формы отправки сообщения-->
 <script type="text/javascript">
-    $("#comp-ii5vf1z2link").on("click", function () {
+    $("#grant-access").on("click", function () {
         document.getElementById('workplace').options[0].selected = true;
     });
-    $("#comp-ii6wrgmwlink").on("click", function () {
+    $("#start-work0").on("click", function () {
         document.getElementById('workplace').options[1].selected = true;
     });
-    $("#comp-ii6wrm4mlink").on("click", function () {
+    $("#start-work1").on("click", function () {
         document.getElementById('workplace').options[2].selected = true;
     });
 </script>
@@ -1086,4 +1078,3 @@
 
 </body>
 </html>
-
