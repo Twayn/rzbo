@@ -12,37 +12,7 @@ h2 { font-size: 1.8em; line-height: 1.9em; margin-bottom: 15px; }
     letter-spacing: normal;
 }
 
-.s2 h1 {
-    margin: 0;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-.s2 h2 {
-    margin: 0;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-.s2 h3 {
-    margin: 0;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-.s2 h4 {
-    margin: 0;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-.s2 h5 {
-    margin: 0;
-    line-height: normal;
-    letter-spacing: normal;
-}
-
-.s2 h6 {
+.s2 h1, .s2 h2, .s2 h3, .s2 h4, .s2 h5, .s2 h6 {
     margin: 0;
     line-height: normal;
     letter-spacing: normal;
@@ -146,4 +116,28 @@ h2 { font-size: 1.8em; line-height: 1.9em; margin-bottom: 15px; }
     left: 0;
     border-top: 0 solid rgba(0, 0, 0, 1);
     border-bottom: 0 solid rgba(0, 0, 0, 1);
+}
+
+.nav-item{
+    font-size: 2.0em;
+    font-weight: bold;
+}
+
+.divider-vertical {
+    height: 40px;
+    margin: 0 9px;
+    border-left: 1px solid #D2D2D2;
+    border-right: 1px solid #D2D2D2;
+}
+
+.form-control {
+    font-size: 1.4em;
+}
+
+.btn-danger, .btn-success, .btn-basic{
+    font-size: 1.4em;
+}
+
+.bootstrap-label{
+    font-size: 1.4em;
 }

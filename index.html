@@ -24,9 +24,11 @@
         <li class="nav-item">
             <a class="nav-link" href="#FunctionalOfSystem">Функционал</a>
         </li>
+        <li class="divider-vertical"></li>
         <li class="nav-item">
             <a class="nav-link" href="#Price">Цены</a>
         </li>
+        <li class="divider-vertical"></li>
         <li class="nav-item">
             <a class="nav-link" href="http://www.site.su">Другие продукты</a>
         </li>
@@ -38,7 +40,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Заполните форму и мы свяжемся в Вами</h4>
+                <h2 class="modal-title">Заполните форму и мы свяжемся в Вами</h2>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -46,8 +48,8 @@
                 <form id="contact" name="contact" action="#" method="post">
 
                     <div class="form-group">
-                        <label for="workplace">Количество рабочих мест:&nbsp&nbsp&nbsp</label>
-                        <select id="workplace" name="workplace" size="1">
+                        <label class="bootstrap-label" for="workplace">Количество рабочих мест:&nbsp&nbsp&nbsp</label>
+                        <select id="workplace" name="workplace" size="1" style="font-size: 1.4em;">
                             <option value="Демоверсия">Бесплатная демоверсия</option>
                             <option value="До пяти">До пяти рабочих мест</option>
                             <option value="Пять и более">Пять и более рабочих мест</option>
@@ -55,23 +57,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="forename">Ваше имя</label>
+                        <label class="bootstrap-label" for="forename">Ваше имя</label>
                         <input type="text" class="form-control" id="forename" placeholder="Имя" required minlength="4" maxlength="40">
                     </div>
                     <div class="form-group">
-                        <label for="company">Название компании</label>
+                        <label class="bootstrap-label" for="company">Название компании</label>
                         <input type="text" class="form-control" id="company" placeholder="Название" minlength="3" maxlength="40">
                     </div>
                     <div class="form-group">
-                        <label for="email">Ваш E-mail</label>
+                        <label class="bootstrap-label" for="email">Ваш E-mail</label>
                         <input type="email" class="form-control" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Ваш телефон</label>
+                        <label class="bootstrap-label" for="phone">Ваш телефон</label>
                         <input type="tel" class="form-control" id="phone" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
                     </div>
                     <div class="form-group">
-                        <label for="msg">Ваше сообщение</label>
+                        <label class="bootstrap-label" for="msg">Ваше сообщение</label>
                         <textarea class="form-control" id="msg" placeholder="Сообщение" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn btn-success" id="send">Отправить</button>
@@ -103,13 +105,9 @@
     </style>
 </div>
 
-<div id="SITE_BACKGROUND" class="siteBackground" style="position: absolute; top: 0; height: 2230px; width: 1687px;">
-    <div id="SITE_BACKGROUND_current_c204q"
-         style="top:0;height:100%;width:100%;background-color:rgba(224, 224, 224, 1);position:fixed;"
-         class="siteBackgroundcurrent">
-        <div data-image-css-background-repeat="" data-image-css-background-position="" data-image-css-background-size=""
-             id="SITE_BACKGROUND_currentImage_c204q" style="position: absolute; top: 0; height: 100%; width: 100%;"
-             class="siteBackgroundcurrentImage"></div>
+<div style="position: absolute; top: 0; height: 2230px; width: 1687px;">
+    <div style="top:0;height:100%;width:100%;background-color:rgba(224, 224, 224, 1);position:fixed;">
+        <div style="position: absolute; top: 0; height: 100%; width: 100%;"></div>
     </div>
 </div>
 
@@ -971,17 +969,17 @@
 
 <!--  Кнопка наверх  -->
 <div ID="toTop" style="position: fixed; /* фиксированная позиция */
-         opacity: 0.7; /* прозрачность */
-         padding: 15px 10px 10px; /* отступы */
-         background: #28a745; 
-         border-radius: 5px; /* скругление углов */
-         -webkit-border-radius: 5px;
-         -moz-border-radius: 5px;
-         right: 10px; /* отступ слева */
-         bottom: 50px; /* отступ снизу */
-         display: none; /* спрятать блок */
-         cursor: pointer;
-         z-index: 100;"><img alt="Прокрутить вверх" src="img/up.png">
+     opacity: 0.7; /* прозрачность */
+     padding: 15px 10px 10px; /* отступы */
+     background: #28a745;
+     border-radius: 5px; /* скругление углов */
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     right: 10px; /* отступ слева */
+     bottom: 50px; /* отступ снизу */
+     display: none; /* спрятать блок */
+     cursor: pointer;
+     z-index: 100;"><img alt="Прокрутить вверх" src="img/up.png">
 </div>
 
 <!--Прокрутка наверх-->
@@ -1011,10 +1009,10 @@
 
     function change_image() {
         opacity--;
-        var j = i + 1;
-        var current_image = 'img_' + i;
+        let j = i + 1;
+        const current_image = 'img_' + i;
         if (i === image_count) j = 1;
-        var next_image = 'img_' + j;
+        const next_image = 'img_' + j;
         document.getElementById(current_image).style.opacity = opacity / 100;
         document.getElementById(current_image).style.filter = 'alpha(opacity=' + opacity + ')';
         document.getElementById(next_image).style.opacity = (100 - opacity) / 100;

@@ -1,14 +1,14 @@
-﻿ function validateEmail(email) { 
-    var reg = /^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)*\.[A-Za-z]{2,6}$/;
-    return reg.test(email);
+﻿ function validateEmail(email) {
+     const reg = /^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)*\.[A-Za-z]{2,6}$/;
+     return reg.test(email);
  }
  function validatePhone(phone) {
-    var reg = /^\d[\d() -]{4,14}\d$/;	//Только цифры, пробелы, дефисы от 4 до 14
-    return reg.test(phone);
+     const reg = /^\d[\d() -]{4,14}\d$/;	//Только цифры, пробелы, дефисы от 4 до 14
+     return reg.test(phone);
  }
  function validateName(name){
-    var reg = /^[a-zA-ZА-Яа-яЁё ]{3,40}$/;	//только буквы от 3 до 40
-    return reg.test(name);
+     const reg = /^[a-zA-ZА-Яа-яЁё ]{3,40}$/;	//только буквы от 3 до 40
+     return reg.test(name);
  }
 
  $(document).ready(function() {
