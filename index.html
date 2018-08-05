@@ -3,15 +3,16 @@
     <meta charset="utf-8">
     <title>Реестр закупок</title>
     <link href="img/favicon.ico" rel="icon" type="image/x-icon"/>
-    <!--<script type="text/javascript" src="./js/order.call.js"></script>-->
-    <!--<script type="text/javascript" src="./js/start.work.js"></script>-->
-    <link rel="stylesheet" href="css/viewer.css">
-    <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./js/order.call.js"></script>
+    <script type="text/javascript" src="./js/start.work.js"></script>
+    <link rel="stylesheet" href="css/viewer.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
     <!-- TODO вернуть плавную прокрутку -->
 </head>
 
@@ -45,7 +46,7 @@
                 <form id="contact" name="contact" action="#" method="post">
 
                     <div class="form-group">
-                        <label for="workplace">Количество рабочих мест</label>
+                        <label for="workplace">Количество рабочих мест:&nbsp&nbsp&nbsp</label>
                         <select id="workplace" name="workplace" size="1">
                             <option value="Демоверсия">Бесплатная демоверсия</option>
                             <option value="До пяти">До пяти рабочих мест</option>
@@ -55,25 +56,25 @@
 
                     <div class="form-group">
                         <label for="forename">Ваше имя</label>
-                        <input type="text" class="form-control" id="forename" placeholder="Имя">
+                        <input type="text" class="form-control" id="forename" placeholder="Имя" required minlength="4" maxlength="40">
                     </div>
                     <div class="form-group">
                         <label for="company">Название компании</label>
-                        <input type="text" class="form-control" id="company" placeholder="Название">
+                        <input type="text" class="form-control" id="company" placeholder="Название" minlength="3" maxlength="40">
                     </div>
                     <div class="form-group">
                         <label for="email">Ваш E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Ваш телефон</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                        <input type="tel" class="form-control" id="phone" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
                     </div>
                     <div class="form-group">
-                        <label for="textarea">Ваше сообщение</label>
-                        <textarea class="form-control" id="textarea" placeholder="Сообщение" rows="3"></textarea>
+                        <label for="msg">Ваше сообщение</label>
+                        <textarea class="form-control" id="msg" placeholder="Сообщение" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success">Отправить</button>
+                    <button type="submit" class="btn btn-success" id="send">Отправить</button>
                     <button type="button" class="btn btn-danger" style="float: right;" data-dismiss="modal">Закрыть</button>
                 </form>
             </div>
@@ -942,39 +943,23 @@
                     <div style="height: 303px; top: 69px; left: 490px; width: 460px; position: absolute;">
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="input1" placeholder="Имя">
+                                <input type="text" class="form-control" id="input1" placeholder="Ваше имя" required minlength="4" maxlength="40">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="input2" placeholder="Название компании">
+                                <input type="text" class="form-control" id="input2" placeholder="Название компании" minlength="3" maxlength="40">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="input3" placeholder="E-mail">
+                                <input type="email" class="form-control" id="input3" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="input4" placeholder="Телефон">
+                                <input type="tel" class="form-control" id="input4" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="textarea1"
-                                          placeholder="Тема, время для связи, другое" rows="3"></textarea>
+                                <textarea class="form-control" id="textarea1" placeholder="Тема, время для связи, другое" rows="3"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-basic">Заказать звонок</button>
-
-                            <div style="display: none" id="send_text">
-                                <h3>Сообщение отправлено</h3>
-                            </div>
-                            <div style="display: none" id="correct_name">
-                                <h3>Введите корректное имя</h3>
-                            </div>
-                            <div style="display: none" id="correct_email">
-                                <h3>Введите корректный Е-mail</h3>
-                            </div>
-                            <div style="display: none" id="correct_phone">
-                                <h3>Введите корректный телефон</h3>
-                            </div>
-
                         </form>
-
                     </div>
                     <div style="top: 35px; left: 272px; width: 215px; position: absolute;" class="s2" id="WRchTxt0-sk3">
                         <p class="font_5"><strong>МЫ В СОЦСЕТЯХ</strong></p>
