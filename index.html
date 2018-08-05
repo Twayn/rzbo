@@ -11,15 +11,28 @@
 
     <script type="text/javascript" src="./js/order.call.js"></script>
     <script type="text/javascript" src="./js/start.work.js"></script>
-    <link rel="stylesheet" href="css/viewer.css">
+    <script type="text/javascript" src="./js/utility.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
-    <!-- TODO вернуть плавную прокрутку -->
 </head>
 
 <body>
 
+<style type="text/css">
+    .font_0 {font: normal normal bold 26px/1.1em 'courier new', courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;color: #555555;}
+    .font_1 {font: normal normal normal 34px/1.3em Verdana, geneva, sans-serif;color: #555555;}
+    .font_2 {font: normal normal normal 25px/1.2em Verdana, geneva, sans-serif;color: #555555;}
+    .font_3 {font: normal normal bold 19px/1.3em 'courier new', courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;color: #555555;}
+    .font_4 {font: normal normal normal 18px/1.3em Arial, 'ms pgothic', dotum, helvetica, sans-serif;color: #555555;}
+    .font_5 {font: normal normal normal 12px/1.3em Arial, 'ms pgothic', dotum, helvetica, sans-serif;color: #555555;}
+</style>
+
+<style type="text/css">
+    .color_1 {color: #555555;}
+    .color_2 {color: #FFFFFF;}
+</style>
+
+<!-- Navigation bar -->
 <nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-center" style="z-index:100">
-    <!-- TODO убрать z-index-->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" href="#FunctionalOfSystem">Функционал</a>
@@ -35,76 +48,6 @@
     </ul>
 </nav>
 
-<div class="modal fade" id="orderProductModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h2 class="modal-title">Заполните форму и мы свяжемся в Вами</h2>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <div class="modal-body">
-                <form id="contact" name="contact" action="#" method="post">
-
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="workplace">Количество рабочих мест:&nbsp&nbsp&nbsp</label>
-                        <select id="workplace" name="workplace" size="1" style="font-size: 1.4em;">
-                            <option value="Демоверсия">Бесплатная демоверсия</option>
-                            <option value="До пяти">До пяти рабочих мест</option>
-                            <option value="Пять и более">Пять и более рабочих мест</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="forename">Ваше имя</label>
-                        <input type="text" class="form-control" id="forename" placeholder="Имя" required minlength="4" maxlength="40">
-                    </div>
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="company">Название компании</label>
-                        <input type="text" class="form-control" id="company" placeholder="Название" minlength="3" maxlength="40">
-                    </div>
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="email">Ваш E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="phone">Ваш телефон</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="bootstrap-label" for="msg">Ваше сообщение</label>
-                        <textarea class="form-control" id="msg" placeholder="Сообщение" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success" id="send">Отправить</button>
-                    <button type="button" class="btn btn-danger" style="float: right;" data-dismiss="modal">Закрыть</button>
-                </form>
-            </div>
-
-            <!--<div class="modal-footer">-->
-                <!---->
-            <!--</div>-->
-
-        </div>
-    </div>
-</div>
-
-<div>
-    <style type="text/css">
-        .font_0 {font: normal normal bold 26px/1.1em 'courier new', courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;color: #555555;}
-        .font_1 {font: normal normal normal 34px/1.3em Verdana, geneva, sans-serif;color: #555555;}
-        .font_2 {font: normal normal normal 25px/1.2em Verdana, geneva, sans-serif;color: #555555;}
-        .font_3 {font: normal normal bold 19px/1.3em 'courier new', courier-ps-w01, courier-ps-w02, courier-ps-w10, monospace;color: #555555;}
-        .font_4 {font: normal normal normal 18px/1.3em Arial, 'ms pgothic', dotum, helvetica, sans-serif;color: #555555;}
-        .font_5 {font: normal normal normal 12px/1.3em Arial, 'ms pgothic', dotum, helvetica, sans-serif;color: #555555;}
-    </style>
-
-    <style type="text/css">
-        .color_1 {color: #555555;}
-        .color_2 {color: #FFFFFF;}
-    </style>
-</div>
-
 <div style="position: absolute; top: 0; height: 2230px; width: 1687px;">
     <div style="top:0;height:100%;width:100%;background-color:rgba(224, 224, 224, 1);position:fixed;">
         <div style="position: absolute; top: 0; height: 100%; width: 100%;"></div>
@@ -113,7 +56,7 @@
 
 <!-- Header -->
 <div class="SITE_ROOT" id="SITE_ROOT" style="width:980px;padding-bottom:41px;">
-    <div style="top: 0; width: 980px; height: 114px; position: absolute; left: 0;" class="s0" data-state=" " id="SITE_HEADER">
+    <div style="top: 0; width: 980px; height: 114px; position: absolute; left: 0;" class="s0" id="SITE_HEADER">
 
         <!-- Лого -->
         <div style="top:45px;left:165px;width:268px;height:36px;position:absolute;" title="АСГОР">
@@ -125,7 +68,7 @@
         </div>
 
         <!-- Телефон -->
-        <div style="top: 12px; left: 625px; width: 261px; position: absolute;" class="s2">
+        <div style="top: 12px; left: 625px; width: 261px; position: absolute;" class="common">
             <h1 style="font-size: 25px;" class="font_0">
 				 <span style="font-size:25px;">
 				 <span style="font-weight:normal;">
@@ -140,20 +83,18 @@
         <!-- Кнопка заказать звонок -->
         <a href="#Call">
             <div style="top: 54px; left: 665px; width: 261px; height: 56px; position: absolute; min-height: 28px;">
-                <button type="button" class="btn btn-success btn-large"
-                        style="height: 50px; width: 188px; font-size: 2.0em; ">Заказать звонок!
-                </button>
+                <button type="button" class="btn btn-success btn-large" style="height: 50px; width: 188px; font-size: 2.0em; ">Заказать звонок!</button>
             </div>
         </a>
     </div>
 
-    <div style="top: 114px; width: 980px; height: 1713px; position: absolute; left: 0;" class="s9" data-state="" id="PAGES_CONTAINER">
+    <div style="top: 114px; width: 980px; height: 1713px; position: absolute; left: 0;">
         <!-- белый разделитель свернху -->
-        <div style="top: 91px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="s13"></div>
+        <div style="top: 91px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="topDivider"></div>
 
         <!-- белый фон -->
         <div style="top: 104px; height: 1603px; position: absolute; width: 1687px; left: -354px;" class="s14">
-            <div style="background-image: none;" class="s14bg"></div>
+            <div style="background-image: none;" class="siteBackground"></div>
         </div>
 
         <!-- картинка ноутбука -->
@@ -186,81 +127,81 @@
             </div>
         </a>
 
-        <div style="top: 11px; left: 542px; width: 438px; position: absolute;" class="s2">
+        <div style="top: 11px; left: 542px; width: 438px; position: absolute;" class="common">
             <h4 style="text-align: center; font-size: 25px;" class="font_1"><span style="font-size:25px;">Реестр закупок бюджетной организации</span></h4>
         </div>
 
         <!-- Разделитель -->
-        <div style="top: 402px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="s17">
+        <div style="top: 402px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="middleDivider">
             <div class="s17line"></div>
         </div>
 
         <!-- функциональные возможностеи системы -->
-        <div style="top: 432px; left: 0; width: 980px; position: absolute;" class="s2">
+        <div style="top: 432px; left: 0; width: 980px; position: absolute;" class="common">
             <h5 style="text-align: center;" class="font_2"><span style="color:#244C99;">ФУНКЦИОНАЛЬНЫЕ ВОЗМОЖНОСТИ СИСТЕМЫ</span></h5>
         </div>
 
-        <div style="top: 529px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 529px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px; line-height: 2.1em;" class="font_3"><span style="font-size:15px;"><span
                     style="line-height:2.1em;"><span style="font-family:verdana,geneva,sans-serif;"><span
                     style="font-weight:normal;">Планирование закупок организации в разрезе КБК</span></span></span></span>
             </h6>
         </div>
-        <div style="top: 585px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 585px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Ведение журнала закупок по всем типам закупок, согласно 44-ФЗ</span></span></span>
             </h6>
         </div>
-        <div style="top: 639px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 639px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Автоматизированный контроль разрешенных лимитов закупок малого объема, запросов котировок и закупок у СМП и СО НКО, согласно 44-ФЗ</span></span></span>
             </h6>
         </div>
-        <div style="top: 924px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 924px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span
                     style="font-family:verdana,geneva,sans-serif;"><span style="font-weight:normal;">Возможность ведения заказчиком собственного справочника номенклатуры часто закупаемых товаров, работ и услуг</span></span></span>
             </h6>
         </div>
-        <div style="top: 586px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 586px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span
                     style="font-family:verdana,geneva,sans-serif;"><span style="font-weight:normal;">Встроенные классификаторы: ОКВЭД, ОКПД, ОКДП и КБК</span></span></span>
             </h6>
         </div>
-        <div style="top: 651px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 651px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Система содержит перечень товаров, обязательных для размещения в форме электронного аукциона </span></span></span>
             </h6>
         </div>
-        <div style="top: 736px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 736px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Учет исполнения контрактов</span></span></span></h6>
         </div>
-        <div style="top: 537px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 537px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Регистрация дополнительных соглашений</span></span></span>
             </h6>
         </div>
-        <div style="top: 782px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 782px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Регулярные договора, напоминание о продлении</span></span></span>
             </h6>
         </div>
-        <div style="top: 822px; left: 74px; width: 405px; position: absolute;" class="s2">
+        <div style="top: 822px; left: 74px; width: 405px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Автоматическое формирование отчетных форм: «План-график закупок» для размещения на сайте госзаказа и «1-Контракт» в соответствии с 44-ФЗ (пост. Росстата 374) </span></span></span>
             </h6>
         </div>
-        <div style="top: 923px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 923px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Универсальный механизм формирования отчетов - возможность создавать выборки договоров, сортировать их по широкому набору критериев</span></span></span>
             </h6>
         </div>
-        <div style="top: 724px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 724px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Возможность мониторинга закупок (сбор, обобщение, систематизация и оценка информации), реализация планов закупок и планов-графиков при помощи сводного отчета по совершенным закупкам</span></span></span>
             </h6>
         </div>
-        <div style="top: 843px; left: 564px; width: 416px; position: absolute;" class="s2">
+        <div style="top: 843px; left: 564px; width: 416px; position: absolute;" class="common">
             <h6 style="font-size: 15px;" class="font_3"><span style="font-size:15px;"><span style="font-weight:normal;"><span
                     style="font-family:verdana,geneva,sans-serif;">Выгрузка реестра договоров, справочников, всех отчетов в документы Microsoft Excel</span></span>&nbsp;</span>
             </h6>
@@ -335,235 +276,265 @@
 
 
         <!-- Разделитель -->
-        <div style="top: 1048px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="s17">
-            <div class="s17line"></div>
-        </div>
+        <div style="top: 1048px; left: -353.5px; width: 1687px; height: 5px; position: absolute;" class="middleDivider"></div>
 
         <!-- Плашка: 750 р. месяц -->
-        <div style="top: 1474px; height: 183px; position: absolute; width: 980px; left: 0;" class="s31">
-            <div style="background-color: rgb(36, 76, 153); position: absolute; top: 0; width: 1687px; height: 183px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 183px, -354px);" class="s31background"></div>
-            <div class="s31inlineContent">
-                <div style="top: 62px; left: 256px; width: 56px; height: 56px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/add.svg" style="width: 56px; height: 56px;">
-                </div>
-                <div style="top: 22px; left: 745px; width: 228px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:33px;">750 р. / р.м.</span></span></h4>
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:33px;">в месяц</span></span></h4>
-                </div>
-                <div style="top: 111px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
-                    <button type="button" class="btn btn-success" id="start-work1" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
-                        Начать работу!
-                    </button>
-                </div>
-                <div style="top: 17px; left: 35px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                </div>
-                <div style="top: 19px; left: 90px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                </div>
-                <div style="top: 24px; left: 62px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                </div>
+        <div style="top: 1474px; height: 183px; position: absolute; width: 980px; left: 0;">
+            <div style="background-color: rgb(36, 76, 153); position: absolute; top: 0; width: 1687px; height: 183px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 183px, -354px);"></div>
+            <div style="top: 62px; left: 256px; width: 56px; height: 56px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/add.svg" style="width: 56px; height: 56px;">
+            </div>
+            <div style="top: 22px; left: 745px; width: 228px; position: absolute; visibility: inherit;" class="common">
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:33px;">750 р. / р.м.</span></span></h4>
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:33px;">в месяц</span></span></h4>
+            </div>
+            <div style="top: 111px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
+                <button type="button" class="btn btn-success" id="start-work1" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                    Начать работу!
+                </button>
+            </div>
+            <div style="top: 17px; left: 35px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
+            </div>
+            <div style="top: 19px; left: 90px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
+            </div>
+            <div style="top: 24px; left: 62px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
+            </div>
 
-                <div style="top: 24px; left: 12px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                </div>
+            <div style="top: 24px; left: 12px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
+            </div>
 
-                <div style="top: 24px; left: 112px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                </div>
+            <div style="top: 24px; left: 112px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
+            </div>
 
-                <div style="top: 71px; left: 0; width: 168px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:15px;">&nbsp;</span></span></h4>
-                    <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:17px;">Пакет от 5 и БОЛЕЕ рабочих мест</span></span></h4>
-                </div>
+            <div style="top: 71px; left: 0; width: 168px; position: absolute; visibility: inherit;" class="common">
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:15px;">&nbsp;</span></span></h4>
+                <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:17px;">Пакет от 5 и БОЛЕЕ рабочих мест</span></span></h4>
+            </div>
 
-                <div style="top: 13px; left: 438px; width: 103px; height: 103px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/management.svg" style="width: 103px; height: 87px;">
-                </div>
+            <div style="top: 13px; left: 438px; width: 103px; height: 103px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/management.svg" style="width: 103px; height: 87px;">
+            </div>
 
-                <div style="top: 118px; left: 416px; width: 148px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
-                            style="font-size:19px;">Техническая</span></span></h4>
-                    <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
-                            style="font-size:19px;">поддержка</span></span></h4>
-                </div>
+            <div style="top: 118px; left: 416px; width: 148px; position: absolute; visibility: inherit;" class="common">
+                <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
+                        style="font-size:19px;">Техническая</span></span></h4>
+                <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
+                        style="font-size:19px;">поддержка</span></span></h4>
+            </div>
 
-                <div style="top: 73px; left: 611px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
-                </div>
+            <div style="top: 73px; left: 611px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
             </div>
         </div>
 
         <!-- Плашка: 700 р. месяц -->
-        <div style="top: 1287px; height: 177px; position: absolute; width: 980px; left: 0;" class="s31">
-            <div style="background-color: rgb(36, 76, 153); position: absolute; top: 0; width: 1687px; height: 177px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 177px, -354px);" class="s31background"></div>
-            <div class="s31inlineContent">
-                <div style="top: 17px; left: 745px; width: 218px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:33px;">700 р. / р.м.</span></span></h4>
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:33px;">в месяц</span></span></h4>
+        <div style="top: 1287px; height: 177px; position: absolute; width: 980px; left: 0;">
+            <div style="background-color: rgb(36, 76, 153); position: absolute; top: 0; width: 1687px; height: 177px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 177px, -354px);"></div>
+            <div style="top: 17px; left: 745px; width: 218px; position: absolute; visibility: inherit;" class="s2">
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:33px;">700 р. / р.м.</span></span></h4>
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:33px;">в месяц</span></span></h4>
+            </div>
+            <div style="top: 110px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
+                <button type="button" class="btn btn-success" id="start-work0" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                    Начать работу!
+                </button>
+            </div>
+            <div style="top: 59px; left: 256px; width: 56px; height: 56px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/add.svg" style="width: 56px; height: 56px;">
+            </div>
+            <div style="top: 115px; left: 416px; width: 148px; position: absolute; visibility: inherit;" class="s2">
+                <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
+                        style="font-size:19px;">Техническая</span></span></h4>
+                <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
+                        style="font-size:19px;">поддержка</span></span></h4>
+            </div>
+            <div style="top: 62px; left: 611px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
+            </div>
+            <div style="top: 10px; left: 438px; width: 103px; height: 103px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/management.svg" style="width: 103px; height: 87px;">
+            </div>
+            <div style="top: 8px; left: 38px; width: 94px; height: 94px; position: absolute; visibility: inherit;">
+                <div style="top: 5px; left: 28px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
                 </div>
-                <div style="top: 110px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
-                    <button type="button" class="btn btn-success" id="start-work0" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
-                        Начать работу!
-                    </button>
+                <div style="top: 24px; left: 82px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
                 </div>
-                <div style="top: 59px; left: 256px; width: 56px; height: 56px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/add.svg" style="width: 56px; height: 56px;">
+                <div style="top: 24px; left: -24px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
+                    <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
                 </div>
-                <div style="top: 115px; left: 416px; width: 148px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
-                            style="font-size:19px;">Техническая</span></span></h4>
-                    <h4 style="text-align: center; font-size: 19px;" class="font_1"><span class="color_2"><span
-                            style="font-size:19px;">поддержка</span></span></h4>
-                </div>
-                <div style="top: 62px; left: 611px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
-                </div>
-                <div style="top: 10px; left: 438px; width: 103px; height: 103px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/management.svg" style="width: 103px; height: 87px;">
-                </div>
-                <div style="top: 8px; left: 38px; width: 94px; height: 94px; position: absolute; visibility: inherit;">
-                    <div style="top: 5px; left: 28px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                        <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                    </div>
-                    <div style="top: 24px; left: 82px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                        <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                    </div>
-                    <div style="top: 24px; left: -24px; width: 49px; height: 49px; position: absolute; visibility: inherit;">
-                        <img alt="" src="img/icons/user.svg" style="width: 50px; height: 46px;">
-                    </div>
-                </div>
-                <div style="top: 99px; left: 23px; width: 128px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span style="font-size:17px;">Пакет ДО 5 рабочих мест</span></span></h4>
-                </div>
+            </div>
+            <div style="top: 99px; left: 23px; width: 128px; position: absolute; visibility: inherit;" class="s2">
+                <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span style="font-size:17px;">Пакет ДО 5 рабочих мест</span></span></h4>
             </div>
         </div>
 
         <!-- Плашка: Бесплатная демоверсия на два месяца -->
         <div style="top: 1100px; height: 175px; position: absolute; width: 980px; left: 0;" class="s31">
-            <div style="background-color: #28a745; position: absolute; top: 0; width: 1687px; height: 175px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 175px, -354px);" class="s31background"></div>
-            <div class="s31inlineContent">
-                <div style="top: 100px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
-                    <button type="button" class="btn btn-danger" id="grant-access" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
-                        Получить доступ!
-                    </button>
-                </div>
-                <div style="top: 17px; left: 668px; width: 380px; position: absolute; visibility: inherit; text-align: center;" class="s2">
-                    <h4 style="font-size: 30px;" class="font_1"><span class="color_2"><span
-                            style="font-size:30px;"><span style="font-weight:bold; font-size: 90%;">Бесплатная демоверсия на два месяца</span></span></span>
-                    </h4>
-                </div>
-                <div style="top: 62px; left: 425px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
-                </div>
-                <div style="top: 11px; left: 40px; width: 94px; height: 94px; position: absolute; visibility: inherit;">
-                    <img alt="" src="img/icons/user.svg" style="width: 94px; height: 88px;">
-                </div>
-                <div style="top: 102px; left: 23px; width: 128px; position: absolute; visibility: inherit;" class="s2">
-                    <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:33px;">1</span></span></h4>
-                    <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span
-                            style="font-size:17px;">рабочее место</span></span></h4>
-                </div>
+            <div style="background-color: #28a745; position: absolute; top: 0; width: 1687px; height: 175px; left: -354px; overflow: hidden; clip: rect(0px, 1687px, 175px, -354px);"></div>
+            <div style="top: 100px; left: 765px; width: 188px; height: 50px; position: absolute; min-height: 28px; visibility: inherit;">
+                <button type="button" class="btn btn-danger" id="grant-access" data-toggle="modal" style="height: 50px; width: 188px; font-size: 2.0em;" data-target="#orderProductModal">
+                    Получить доступ!
+                </button>
+            </div>
+            <div style="top: 17px; left: 668px; width: 380px; position: absolute; visibility: inherit; text-align: center;" class="s2">
+                <h4 style="font-size: 30px;" class="font_1"><span class="color_2"><span
+                        style="font-size:30px;"><span style="font-weight:bold; font-size: 90%;">Бесплатная демоверсия на два месяца</span></span></span>
+                </h4>
+            </div>
+            <div style="top: 62px; left: 425px; width: 120px; height: 21px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/equals.svg" style="width: 70px; height: 56px;">
+            </div>
+            <div style="top: 11px; left: 40px; width: 94px; height: 94px; position: absolute; visibility: inherit;">
+                <img alt="" src="img/icons/user.svg" style="width: 94px; height: 88px;">
+            </div>
+            <div style="top: 102px; left: 23px; width: 128px; position: absolute; visibility: inherit;" class="s2">
+                <h4 style="font-size: 33px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:33px;">1</span></span></h4>
+                <h4 style="font-size: 17px; text-align: center;" class="font_1"><span class="color_2"><span
+                        style="font-size:17px;">рабочее место</span></span></h4>
             </div>
         </div>
 
-        <div style="top: 412px; left: -161px; width: 0; height: 21px; position: absolute;">
-            <a name="FunctionalOfSystem"></a>
-        </div>
-        <div style="top: 1068px; left: -562px; width: 0; height: 21px; position: absolute;">
-            <a name="Price"></a>
-        </div>
-        <div style="top: 1692px; left: 109px; width: 0; height: 21px; position: absolute;">
-            <a name="Call"></a>
-        </div>
+        <div style="top: 412px; left: -161px; width: 0; height: 21px; position: absolute;"><a name="FunctionalOfSystem"></a></div>
+        <div style="top: 1068px; left: -562px; width: 0; height: 21px; position: absolute;"><a name="Price"></a></div>
+        <div style="top: 1692px; left: 109px; width: 0; height: 21px; position: absolute;"><a name="Call"></a></div>
 
         <!-- Footer -->
-        <div style="width: 980px; position: absolute; left: 0; height: 350px; bottom: auto; top: 1700px;" class="s5_footer s5" id="SITE_FOOTER">
-            <div style="width: 1687px; left: -354px;" id="SITE_FOOTERscreenWidthBackground" class="s5screenWidthBackground">
-                <div class="s5_bg"></div>
+        <div style="width: 980px; position: absolute; left: 0; height: 350px; bottom: auto; top: 1700px;">
+            <div style="width: 1687px; left: -354px;" class="footer">
+                <div class="footerBackground"></div>
             </div>
-            <div id="SITE_FOOTERcenteredContent" class="s5centeredContent">
-                <div id="SITE_FOOTERbg" class="s5bg"></div>
-                <div id="SITE_FOOTERinlineContent" class="s5inlineContent">
-                    <div style="top: 35px; left: 492px; width: 215px; position: absolute;" class="s2" id="WRchTxte">
-                        <p style="line-height: 1.3em;" class="font_5"><span class="color_1"><span
-                                style="line-height: 1.3em;"><strong>ФОРМА ЗАКАЗА ЗВОНКА&nbsp;</strong></span></span></p>
+            <div style="top: 35px; left: 492px; width: 215px; position: absolute;" class="common">
+                <p style="line-height: 1.3em;" class="font_5"><span class="color_1"><span
+                        style="line-height: 1.3em;"><strong>ФОРМА ЗАКАЗА ЗВОНКА&nbsp;</strong></span></span></p>
+            </div>
+            <div style="top: 35px; left: 20px; width: 220px; position: absolute;" class="common">
+                <p style="font-size: 14px;" class="font_4"><span style="font-weight:bold;"><span
+                        style="font-size:14px;">СВЯЖИТЕСЬ С НАМИ:</span></span></p>
+                <p style="font-size: 14px;" class="font_4">&nbsp;</p>
+                <p style="font-size: 14px;" class="font_4"><span
+                        style="font-size:14px;">Челябинск, Россия</span></p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">454008, ул. Каслинская, д. 2</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Москва, Россия</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">107104, пер. 1-й Красносельский, д. 33</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4">&nbsp;</p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">E-mail:&nbsp;sale@company.su</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Skype: COMPANY</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4">&nbsp;</p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Тел.:&nbsp;+7 (123) 456 78 90<br>
+                Тел.:&nbsp;+7 (495) 111 22 33</span>
+                </p>
+                <p style="font-size: 14px;" class="font_4">&nbsp;</p>
+                <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">© 2018 "COMPANY"</span>
+                </p>
+                <p style="line-height: 1.3em;" class="font_5">&nbsp;</p>
+            </div>
+
+            <div style="height: 303px; top: 69px; left: 490px; width: 460px; position: absolute;">
+                <form id = "order-call">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="input1" placeholder="Ваше имя" required minlength="4" maxlength="40">
                     </div>
-                    <div style="top: 35px; left: 20px; width: 220px; position: absolute;" class="s2"
-                         id="SITE_STRUCTURE_WRichText_1">
-                        <p style="font-size: 14px;" class="font_4"><span style="font-weight:bold;"><span
-                                style="font-size:14px;">СВЯЖИТЕСЬ С НАМИ:</span></span></p>
-                        <p style="font-size: 14px;" class="font_4">&nbsp;</p>
-                        <p style="font-size: 14px;" class="font_4"><span
-                                style="font-size:14px;">Челябинск, Россия</span></p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">454008, ул. Каслинская, д. 2</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Москва, Россия</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">107104, пер. 1-й Красносельский, д. 33</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4">&nbsp;</p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">E-mail:&nbsp;sale@company.su</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Skype: COMPANY</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4">&nbsp;</p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">Тел.:&nbsp;+7 (123) 456 78 90<br>
-                     Тел.:&nbsp;+7 (495) 111 22 33</span>
-                        </p>
-                        <p style="font-size: 14px;" class="font_4">&nbsp;</p>
-                        <p style="font-size: 14px;" class="font_4"><span style="font-size:14px;">© 2018 "COMPANY"</span>
-                        </p>
-                        <p style="line-height: 1.3em;" class="font_5">&nbsp;</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="input2" placeholder="Название компании" minlength="3" maxlength="40">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="input3" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="input4" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="textarea1" placeholder="Тема, время для связи, другое" rows="3"></textarea>
                     </div>
 
-                    <div style="height: 303px; top: 69px; left: 490px; width: 460px; position: absolute;">
-                        <form id = "order-call">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="input1" placeholder="Ваше имя" required minlength="4" maxlength="40">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="input2" placeholder="Название компании" minlength="3" maxlength="40">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="input3" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" class="form-control" id="input4" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="textarea1" placeholder="Тема, время для связи, другое" rows="3"></textarea>
-                            </div>
-
-                            <button id = "order-call-button" type="submit" class="btn btn-basic">Заказать звонок</button>
-                        </form>
+                    <button id = "order-call-button" type="submit" class="btn btn-basic">Заказать звонок</button>
+                </form>
+            </div>
+            <div style="top: 35px; left: 272px; width: 215px; position: absolute;" class="common">
+                <p class="font_5"><strong>МЫ В СОЦСЕТЯХ</strong></p>
+            </div>
+            <div style="top: 78px; left: 320px; width: 101px; position: absolute;" class="common">
+                <p style="line-height: 1.4em;" class="font_5"><span class="color_2">ВКонтакте</span></p>
+            </div>
+            <!-- Эмблема VK -->
+            <div style="position: absolute; width: 46px; height: 31px; top: 69px; left: 270px;">
+                <a href="https://vk.com/company">
+                    <div style="width: 31px; height: 31px; position: absolute; top: 0; left: 0;">
+                        <img alt="" src="img/icons/vk.svg" style="width: 31px; height: 31px;">
                     </div>
-                    <div style="top: 35px; left: 272px; width: 215px; position: absolute;" class="s2">
-                        <p class="font_5"><strong>МЫ В СОЦСЕТЯХ</strong></p>
-                    </div>
-                    <div style="top: 78px; left: 320px; width: 101px; position: absolute;" class="s2">
-                        <p style="line-height: 1.4em;" class="font_5"><span class="color_2">ВКонтакте</span></p>
-                    </div>
-                    <!-- Эмблема VK -->
-                    <div style="position: absolute; width: 46px; height: 31px; top: 69px; left: 270px;">
-                        <a href="https://vk.com/company">
-                            <div style="width: 31px; height: 31px; position: absolute; top: 0; left: 0;">
-                                <img alt="" src="img/icons/vk.svg" style="width: 31px; height: 31px;">
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
 
+    </div>
+</div>
+
+<!-- Форма в модальном окне -->
+<div class="modal fade" id="orderProductModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">Заполните форму и мы свяжемся в Вами</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <form id="contact" name="contact" action="#" method="post">
+
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="workplace">Количество рабочих мест:&nbsp&nbsp&nbsp</label>
+                        <select id="workplace" name="workplace" size="1" style="font-size: 1.4em;">
+                            <option value="Демоверсия">Бесплатная демоверсия</option>
+                            <option value="До пяти">До пяти рабочих мест</option>
+                            <option value="Пять и более">Пять и более рабочих мест</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="forename">Ваше имя</label>
+                        <input type="text" class="form-control" id="forename" placeholder="Имя" required minlength="4" maxlength="40">
+                    </div>
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="company">Название компании</label>
+                        <input type="text" class="form-control" id="company" placeholder="Название" minlength="3" maxlength="40">
+                    </div>
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="email">Ваш E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="phone">Ваш телефон</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Телефон" pattern="[0-9-]{6,14}$" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="bootstrap-label" for="msg">Ваше сообщение</label>
+                        <textarea class="form-control" id="msg" placeholder="Сообщение" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" id="send">Отправить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;" data-dismiss="modal">Закрыть</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -581,35 +552,6 @@
      cursor: pointer;
      z-index: 100;"><img alt="Прокрутить вверх" src="img/up.png">
 </div>
-
-<!-- Смена поля select в списке формы отправки сообщения-->
-<script type="text/javascript">
-    $("#grant-access").on("click", function () {
-        document.getElementById('workplace').options[0].selected = true;
-    });
-    $("#start-work0").on("click", function () {
-        document.getElementById('workplace').options[1].selected = true;
-    });
-    $("#start-work1").on("click", function () {
-        document.getElementById('workplace').options[2].selected = true;
-    });
-</script>
-
-<!--Прокрутка наверх-->
-<script type="text/javascript">
-    $(function () {
-        $(window).scroll(function () {
-            if ($(this).scrollTop() !== 0) {
-                $('#toTop').fadeIn();
-            } else {
-                $('#toTop').fadeOut();
-            }
-        });
-        $('#toTop').click(function () {
-            $('body,html').animate({scrollTop: 0}, 400);
-        });
-    });
-</script>
 
 <!-- Автоматический слайдер картинок -->
 <script type="text/javascript">
@@ -642,7 +584,7 @@
         }
     }
 
-    change_image()
+    change_image();
 </script>
 
 </body>
