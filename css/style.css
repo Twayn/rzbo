@@ -85,3 +85,219 @@ background: -ms-linear-gradient(top, #0e387d, #2f55b7);
 background: linear-gradient(top, #0e387d, #2f55b7);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e387d', endColorstr='#2f55b7');
 }
+
+.s2 {
+    word-wrap: break-word;
+}
+
+.s2 li {
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+}
+
+.s2 ol, .s2 ul {
+    padding-left: 1.3em;
+    padding-right: 0;
+    margin-left: 0.5em;
+    margin-right: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 ul {
+    list-style-type: disc;
+}
+
+.s2 ol {
+    list-style-type: decimal;
+}
+
+.s2 ul ul, .s2 ol ul {
+    list-style-type: circle;
+}
+
+.s2 ul ul ul, .s2 ol ul ul {
+    list-style-type: square;
+}
+
+.s2 ul ol ul, .s2 ol ol ul {
+    list-style-type: square;
+}
+
+.s2 ul[dir="rtl"], .s2 ol[dir="rtl"] {
+    padding-left: 0;
+    padding-right: 1.3em;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+.s2 ul[dir="rtl"] ul, .s2 ul[dir="rtl"] ol, .s2 ol[dir="rtl"] ul, .s2 ol[dir="rtl"] ol {
+    padding-left: 0;
+    padding-right: 1.3em;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+.s2 p {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h1 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h2 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h3 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h4 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h5 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 h6 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.s2 a {
+    color: inherit;
+}
+
+.s5screenWidthBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.s5[data-state~="mobileView"] {
+    position: absolute !important;
+}
+
+.s5[data-state~="fixedPosition"] {
+    position: fixed !important;
+    left: auto !important;
+    z-index: 50;
+}
+
+.s5[data-state~="fixedPosition"].s5_footer {
+    top: auto;
+    bottom: 0;
+}
+
+.s5_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(85, 85, 85, 0.2);
+    border-top: 0 solid transparent;
+    border-bottom: 0 solid transparent;
+}
+
+.s5[data-state~="mobileView"] .s5bg {
+    left: 10px;
+    right: 10px;
+}
+
+.s5bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.s5inlineContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.s5centeredContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.s9[data-state~="mobileView"] {
+    position: absolute !important;
+}
+
+.s9[data-state~="fixedPosition"] {
+    position: fixed !important;
+    left: auto !important;
+    z-index: 50;
+}
+
+.s13 {
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+.s14inlineContent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.s17 {
+    border-bottom: 2px solid rgba(182, 182, 182, 1);
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+.s17 {
+    border-bottom: 2px solid rgba(182, 182, 182, 1);
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+.s14bg {
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-top: 0 solid rgba(0, 0, 0, 1);
+    border-bottom: 0 solid rgba(0, 0, 0, 1);
+}
