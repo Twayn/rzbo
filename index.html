@@ -165,53 +165,26 @@
             <div id="comp-ii01vtrqline" class="s13line"></div>
         </div>
 
-        <div style="top: 104px; height: 1603px; position: absolute; width: 1687px; left: -354px;" class="s14"
-             id="ibbtch4i">
+        <div style="top: 104px; height: 1603px; position: absolute; width: 1687px; left: -354px;" class="s14" id="ibbtch4i">
             <div style="background-image: none;" id="ibbtch4ibg" class="s14bg"></div>
             <div id="ibbtch4iinlineContent" class="s14inlineContent"></div>
         </div>
 
         <!-- картинка ноутбука -->
-        <div style="top:21px;left:4px;width:615px;height:349px;position:absolute;"
-             data-exact-height="348.36601307189545" data-content-padding-horizontal="0"
-             data-content-padding-vertical="0" title="" class="s1" id="ibbtdk9f">
-            <div style="width:615px;height:349px;" id="ibbtdk9flink" class="s1link">
-                <div id="ibbtdk9fimg" style="width:615px;height:349px;position:relative;" class="s1img"
-                     data-state="loaded">
-                    <div class="s1imgpreloader" id="ibbtdk9fimgpreloader"></div>
-                    <img alt="" src="img/comp.png" style="width: 615px; height: 349px; object-fit: contain;"
-                         id="ibbtdk9fimgimage" class="s1imgimage">
-                </div>
-            </div>
+        <div style="top:21px;left:4px;width:615px;height:349px;position:absolute;">
+            <div class="s1imgpreloader" id="ibbtdk9fimgpreloader"></div>
+            <img alt="" src="img/comp.png" style="width: 615px; height: 349px; object-fit: contain;"
+                 id="ibbtdk9fimgimage" class="s1imgimage">
         </div>
 
         <!-- картинки на ноутбуке -->
-        <div style="overflow: hidden; top: 40px; left: 100px; position: absolute; height: 255px; width: 411px;">
-            <div data-image-index="1" data-displayer-width="940" data-displayer-height="583"
-                 data-displayer-uri="41d000_5d00a86ba6e852eea2a55a0a4a85f40e.jpg" data-height-diff="0"
-                 data-width-diff="0" data-bottom-gap="0" data-image-wrapper-right="0" data-image-wrapper-left="0"
-                 data-image-wrapper-top="0" data-image-wrapper-bottom="0" data-margin-to-container="0"
-                 style="position: absolute; left: 0; top: 0; height: 255px; width: 411px;" class="s15imageItem"
-                 data-state="notShowPanel desktopView  unselected clipImage noTransition normal noLink"
-                 id="ibbtdk9e_1i01ny01">
-                <div style="height: 255px; width: 411px; margin: 0;" id="ibbtdk9e_1i01ny01imageWrapper"
-                     class="s15imageItemimageWrapper">
-                    <div style="cursor:pointer;" id="ibbtdk9e_1i01ny01zoom" class="s15imageItemzoom">
-                        <div id="ibbtdk9e_1i01ny01image"
-                             style="width:411px;height:255px;position:relative;overflow:hidden;"
-                             class="s15imageItemimage" data-state="loaded">
-                            <div class="s15imageItemimagepreloader" id="ibbtdk9e_1i01ny01imagepreloader"></div>
-                            <img src="img/p1.jpg" id="img_1" style="position:absolute; "/>
-                            <img src="img/p2.jpg" id="img_2"
-                                 style="position:absolute;opacity: 0; filter: alpha(opacity=0); "/>
-                            <img src="img/p3.jpg" id="img_3"
-                                 style="position:absolute;opacity: 0; filter: alpha(opacity=0); "/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="overflow: hidden; top: 44px; left: 106px; position: absolute; height: 255px; width: 421px;">
+            <img src="img/p1.jpg" id="img_1" style="position:absolute; "/>
+            <img src="img/p2.jpg" id="img_2"
+                 style="position:absolute;opacity: 0; filter: alpha(opacity=0); "/>
+            <img src="img/p3.jpg" id="img_3"
+                 style="position:absolute;opacity: 0; filter: alpha(opacity=0); "/>
         </div>
-
 
         <div style="top: 140px; left: 582px; width: 398px; position: absolute;" class="s2" id="comp-ii01dx9u">
             <h6 style="font-size: 20px;" class="font_3"><span style="font-size:20px;"><span style="font-weight:normal;"><span
@@ -1029,12 +1002,12 @@
 
 <!-- Автоматический слайдер картинок -->
 <script type="text/javascript">
-    var image_count = 3;
-    var interval = 2500; //пауза
-    var time_out = 15; //скорость смены картинки
-    var i = image_count;
-    var timeout;
-    var opacity = 100;
+    const image_count = 3;
+    const interval = 2500; //пауза
+    const time_out = 15; //скорость смены картинки
+    let i = image_count;
+    let timeout;
+    let opacity = 100;
 
     function change_image() {
         opacity--;

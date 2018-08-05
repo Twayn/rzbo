@@ -1,44 +1,19 @@
 ﻿$(document).ready(function() {
 	$("#CntctFrm0-t2usubmit").on("click", function(){
 
-		var nameval = document.getElementById('CntctFrm0-t2unameField').value;
-		var emailval = document.getElementById('CntctFrm0-t2uemailField').value;
-		var phoneval = document.getElementById('CntctFrm0-t2uphoneField').value;
-		var themeval = document.getElementById('CntctFrm0-t2usubjectField').value;
-		var timeval = document.getElementById('CntctFrm0-t2umessageField').value;
-		var compval = document.getElementById('CntctFrm0-t2ucompanyField').value;
+        const nameval = document.getElementById('CntctFrm0-t2unameField').value;
+        const emailval = document.getElementById('CntctFrm0-t2uemailField').value;
+        const phoneval = document.getElementById('CntctFrm0-t2uphoneField').value;
+        const themeval = document.getElementById('CntctFrm0-t2usubjectField').value;
+        const timeval = document.getElementById('CntctFrm0-t2umessageField').value;
+        const compval = document.getElementById('CntctFrm0-t2ucompanyField').value;
 
-		var check = document.getElementById('CntctFrm0-t2usubjectField1').value;
-		var checkLength = check.length;
+        const check = document.getElementById('CntctFrm0-t2usubjectField1').value;
+        const checkLength = check.length;
 
-		var mailvalid = validateEmail(emailval);
-		var phonevalid = validatePhone(phoneval);
-		var namevalid = validateName(nameval);
-
-		if(namevalid === false) {
-			$("#CntctFrm0-t2unameField").addClass("error");
-			$("#correct_name").css('display', 'inline');
-		} else {
-			$("#CntctFrm0-t2unameField").removeClass("error");
-			$("#correct_name").css('display', 'none');
-		}
-
-		if(phonevalid === false) {
-			$("#CntctFrm0-t2uphoneField").addClass("error");
-			$("#correct_phone").css('display', 'inline');
-		} else {
-			$("#CntctFrm0-t2uphoneField").removeClass("error");
-			$("#correct_phone").css('display', 'none');
-		}
-
-		if(mailvalid === false) {
-			$("#CntctFrm0-t2uemailField").addClass("error");
-			$("#correct_email").css('display', 'inline');
-		} else {
-			$("#CntctFrm0-t2uemailField").removeClass("error");
-			$("#correct_email").css('display', 'none');
-		}
-
+        const mailvalid = validateEmail(emailval);
+        const phonevalid = validatePhone(phoneval);
+        const namevalid = validateName(nameval);
 
 		if(mailvalid === true && phonevalid === true && namevalid === true && checkLength === 0) {
 			console.log("Имя: ", nameval);

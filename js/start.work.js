@@ -3,65 +3,36 @@
     return reg.test(email);
  }
  function validatePhone(phone) {
-    var reg = /^\d[\d\(\)\ -]{4,14}\d$/;	//Только цифры, пробелы, дефисы от 4 до 14
+    var reg = /^\d[\d() -]{4,14}\d$/;	//Только цифры, пробелы, дефисы от 4 до 14
     return reg.test(phone);
  }
  function validateName(name){
-    var reg = /^[a-z A-Z А-Я а-я Ёё]{3,40}$/;	//только буквы от 3 до 40
+    var reg = /^[a-zA-ZА-Яа-яЁё ]{3,40}$/;	//только буквы от 3 до 40
     return reg.test(name);
  }
 
-
  $(document).ready(function() {
     $("#contact").submit(function() { return false; });//TODO interesting
-
     $("#send").on("click", function(){
+        const workplval = document.getElementById('workplace').value;
+        const nameval = document.getElementById('forename').value;
+        const emailval = document.getElementById('email').value;
+        const phoneval = document.getElementById('phone').value;
+        const msgval = document.getElementById('msg').value;
+        const comvar = document.getElementById('company').value;
 
-        var workplval = document.getElementById('workplace').value;
-        var nameval = document.getElementById('forename').value;
-        var emailval  = document.getElementById('email').value;
-        var phoneval = document.getElementById('phone').value;
-        var msgval    = document.getElementById('msg').value;
-        var comvar = document.getElementById('company').value;
+        const check = document.getElementById('Name').value;
+        const checkLength = check.length;
 
-        var check = document.getElementById('Name').value;
-        var checkLength = check.length;
-
-        var mailvalid = validateEmail(emailval);
-        var phonevalid = validatePhone(phoneval);
-        var namevalid = validateName(nameval);
-
-
-        if(namevalid === false) {
-            $("#forename").addClass("error");
-            $("#corr_name").css('display', 'inline');
-        } else {
-            $("#forename").removeClass("error");
-            $("#corr_name").css('display', 'none');
-        }
-
-
-        if(phonevalid === false) {
-            $("#phone").addClass("error");
-            $("#corr_phone").css('display', 'inline');
-        } else {
-            $("#phone").removeClass("error");
-            $("#corr_phone").css('display', 'none');
-        }
-
-        if(mailvalid === false) {
-            $("#email").addClass("error");
-            $("#corr_email").css('display', 'inline');
-        } else {
-            $("#email").removeClass("error");
-            $("#corr_email").css('display', 'none');
-        }
+        const mailvalid = validateEmail(emailval);
+        const phonevalid = validatePhone(phoneval);
+        const namevalid = validateName(nameval);
 
         if(mailvalid === true && phonevalid === true && namevalid === true && checkLength === 0) {
             console.log("Имя: ", nameval);
             console.log("Телефон: ", phoneval);
             console.log("E-mail: ", emailval);
-            var resultMsg = "Число рабочих мест: " + workplval + ". Компания: " + comvar + ". " + "Сообщение: " + msgval;
+            const resultMsg = "Число рабочих мест: " + workplval + ". Компания: " + comvar + ". " + "Сообщение: " + msgval;
             console.log(resultMsg);
 
                 $.ajax({
